@@ -65,23 +65,24 @@ When reporting numbers, include dataset details (number of images, source, augme
 
 Install via pip:
 
+```bash
 pip install -r requirements.txt
-
 (If you do not have a requirements file, install: opencv-python numpy tensorflow scikit-image)
+```
 
 ## Usage
 
 1. Place an input image (photo of a Sudoku) in an accessible path.
 2. Run the inference script (example):
 
+```bash
 python infer.py --image path/to/sudoku.jpg --model models/digit_cnn.h5 --output results.json
-
 Output format: JSON with a 9x9 array and per-cell confidence scores. Example:
-
 {
   "matrix": [[5,3,0,0,7,0,0,0,0], ...],
   "confidences": [[0.98, 0.95, 0.12, ...], ...]
 }
+```
 
 Include flags to visualize intermediate steps (preprocessed image, detected grid, per-cell crops) for debugging.
 
